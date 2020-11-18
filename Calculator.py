@@ -1,7 +1,6 @@
 import tkinter
 from tkinter import *
 
-
 root = Tk()
 root.geometry('303x467')
 root.title("Aakash's Calculator")
@@ -59,9 +58,6 @@ def sqr_root():
     e.delete(0,END)
     e.insert(0,f_num**(1/2))
 
-
-
-
 def equal():
     second_number = e.get()
     e.delete(0,END)
@@ -79,10 +75,6 @@ def equal():
     
     #elif math=="sqr root":
        # e.insert(0,f_num**(1/2))
-
-
-    
-
 
 
 btn1 = Button(root, text="1",font=("callibary",11, "bold"), padx=40, pady=20, command= lambda:btn_click(1))
@@ -126,6 +118,5 @@ btn_divide.grid(row=5, column=2)
 btn_equal.grid(row=6, column=1,columnspan=1)
 btn_sqr_root.grid(row=6,column=0)
 btndot.grid(row=6, column=2, columnspan=2)
-
 
 root.mainloop()
