@@ -16,66 +16,80 @@ def clear():
     return e.delete(0, END)
 
 def add():
-    first_number = e.get()
-    global f_num
-    global math
-    math = "addition"
-    f_num = float(first_number)
-    e.delete(0,END)
+    try:
+        first_number = e.get()
+        global f_num
+        global math
+        math = "addition"
+        f_num = float(first_number)
+        e.delete(0,END)
+    except:
+        e.insert(0,"INVALID!!!")
 
 
 def subtract():
-    first_number1 = e.get()
-    global f_num
-    global math
-    math = "subtraction"
-    f_num = float(first_number1)
-    e.delete(0,END)
+    try:
+        first_number1 = e.get()
+        global f_num
+        global math
+        math = "subtraction"
+        f_num = float(first_number1)
+        e.delete(0,END)
+    except:
+        e.insert(0,"INVALID!!!")
 
 
 def multiply():
-    first_number1 = e.get()
-    global f_num
-    global math
-    math = "multiplication"
-    f_num = float(first_number1)
-    e.delete(0,END)
+    try:
+        first_number1 = e.get()
+        global f_num
+        global math
+        math = "multiplication"
+        f_num = float(first_number1)
+        e.delete(0,END)
+    except:
+        e.insert(0,"INVALID!!!")
 
 def divide():
-    first_number1 = e.get()
-    global f_num
-    global math
-    math = "division"
-    f_num = float(first_number1)
-    e.delete(0,END)
+    try:
+        first_number1 = e.get()
+        global f_num
+        global math
+        math = "division"
+        f_num = float(first_number1)
+        e.delete(0,END)
+    except:
+        e.insert(0,"INVALID!!!")
 
 def sqr_root():
-    first_number1 = e.get()
-    global f_num
-    global math
-    math = "sqr root"
-    f_num = float(first_number1)
-    e.delete(0,END)
-    e.insert(0,f_num**(1/2))
+    try:
+        first_number1 = e.get()
+        global f_num
+        global math
+        math = "sqr root"
+        f_num = float(first_number1)
+        e.delete(0,END)
+        e.insert(0,f_num**(1/2))
+    except:
+        e.insert(0,"INVALID!!!")
 
 def equal():
-    second_number = e.get()
-    e.delete(0,END)
-    if math=="addition" :
-        e.insert(0,f_num + float(second_number))
+    try:
+        second_number = e.get()
+        e.delete(0,END)
+        if math=="addition" :
+            e.insert(0,f_num + float(second_number))
     
-    elif math=="subtraction" :
-        e.insert(0,f_num - float(second_number))
+        elif math=="subtraction" :
+            e.insert(0,f_num - float(second_number))
 
-    elif math=="multiplication" :
-        e.insert(0,f_num * float(second_number))
+        elif math=="multiplication" :
+            e.insert(0,f_num * float(second_number))
     
-    elif math=="division":
-        e.insert(0,f_num / float(second_number))
-    
-    #elif math=="sqr root":
-       # e.insert(0,f_num**(1/2))
-
+        elif math=="division":
+            e.insert(0,f_num / float(second_number))
+    except:
+        e.insert(0,"NOT DEFINED")
 
 btn1 = Button(root, text="1",font=("callibary",11, "bold"), padx=40, pady=20, command= lambda:btn_click(1))
 btn2 = Button(root, text="2",font=("callibary",11, "bold"), padx=40, pady=20, command= lambda:btn_click(2))
